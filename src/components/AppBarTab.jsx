@@ -1,5 +1,7 @@
 import React from 'react';
-import { Pressable, StyleSheet, View, Alert } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
+import { Link } from 'react-router-native';
+
 import Text from './Text';
 
 const styles = StyleSheet.create({
@@ -13,12 +15,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const AppBarTab = ({ children }) => {
+const AppBarTab = ({ to, children }) => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => Alert.alert(children)}>
+      <Link to={to} component={Pressable}>
         <Text style={styles.text} fontSize='subheading' fontWeight='bold'>{children}</Text>
-      </Pressable>
+      </Link>
     </View>
   );
 };
