@@ -6,19 +6,18 @@ import Text from './Text';
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: "4%",
-    paddingTop: "9%",
-    paddingBottom: "6%",
+    padding: 20,
+    alignSelf: 'flex-start',
   },
   text: {
     color: "white",
   },
 });
 
-const AppBarTab = ({ to, children }) => {
+const AppBarTab = ({ path, children }) => {
   return (
     <View style={styles.container}>
-      <Link to={to} component={Pressable}>
+      <Link to={path} component={Pressable}>
         <Text style={styles.text} fontSize='subheading' fontWeight='bold'>{children}</Text>
       </Link>
     </View>

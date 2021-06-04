@@ -20,8 +20,8 @@ const Main = () => {
   return (
     <View style={styles.container}>
       <AppBar>
-        <AppBarTab to="/">Repositories</AppBarTab>
-        <AppBarTab to="/signIn">Sign In</AppBarTab>
+        <AppBarTab path="/">Repositories</AppBarTab>
+        <AppBarTab path="/signIn">Sign In</AppBarTab>
       </AppBar>
       <Switch>
         <Route exact path="/">
