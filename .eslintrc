@@ -28,6 +28,10 @@
       "error",
       2
     ],
-    "space-before-function-paren": "error"
+    "space-before-function-paren": "error",
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ]
   }
 }
