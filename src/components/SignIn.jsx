@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 
 import SignInForm from './SignInForm';
+import useSignIn from '../hooks/useSignIn';
 
 const initialValues = {
   username: "",
@@ -18,11 +19,20 @@ const validationShema = yup.object().shape({
     .required('Password is required'),
 });
 
-const onSubmit = (values) => {
-  console.log(values);
-};
 
 const SignIn = () => {
+  const [signIn] = useSignIn();
+
+  const onSubmit = async (values) => {
+    const { username, password } = values;
+    try {
+      const { data } = await signIn({ username, password });
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Formik
       initialValues={initialValues}
