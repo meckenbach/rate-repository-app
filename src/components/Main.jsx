@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
 
 const Main = () => {
   const { data, loading } = useQuery(GET_AUTHORIZED_USER);
-  console.log(data);
   return (
     <View style={styles.container}>
       <AppBar>
